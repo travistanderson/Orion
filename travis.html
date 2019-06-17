@@ -77,82 +77,34 @@
                 var scene = new BABYLON.Scene(engine);
 
                 // Add a camera to the scene and attach it to the canvas
-                var camera = new BABYLON.ArcRotateCamera("Camera", Math.PI, Math.PI/3, 15, BABYLON.Vector3.Zero(), scene);
-                camera.setPosition(new BABYLON.Vector3(0, -10, 10));
-
+                var camera = new BABYLON.ArcRotateCamera("Camera", 2, 2, 10, BABYLON.Vector3.Zero(), scene);
                 camera.attachControl(canvas, true);
                 // camera.position.z = -5;
                 // camera.position.y = 50;
                 // camera.position.x = 5;
 
-                // var camera = new BABYLON.UniversalCamera("UniversalCamera", new BABYLON.Vector3(0, -10, 10), scene);
-                // camera.setTarget(BABYLON.Vector3.Zero());
-                // camera.attachControl(canvas, true);
-
                 // Add lights to the scene
-                var light1 = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, -10, 10), scene);
+                var light1 = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(1, 1, 0), scene);
                 var light2 = new BABYLON.PointLight("light2", new BABYLON.Vector3(0, 1, -1), scene);
                 
                 var faceColors = new Array(6);
-                faceColors[0] = new BABYLON.Color4(0,0,1,1);   // blue top
-                faceColors[1] = new BABYLON.Color4(0,1,0,1);   // green bottom
-                faceColors[2] = new BABYLON.Color4(1,1,0,1);   // yellow left
-                faceColors[3] = new BABYLON.Color4(0,1,1,1);   // green right
-                faceColors[4] = new BABYLON.Color4(1,0,0,1);   // red back
-                faceColors[5] = new BABYLON.Color4(1,0,1,1);   // purple front
-
-                var travisUV = new Array(6);
-                travisUV[0] = new BABYLON.Vector4(0, 0, 0, 0);
-                travisUV[1] = new BABYLON.Vector4(0, 0, 0, 0);
-                travisUV[2] = new BABYLON.Vector4(0, 0, 0, 0);
-                travisUV[3] = new BABYLON.Vector4(0, 0, 0, 0);
-                travisUV[4] = new BABYLON.Vector4(0, 0, 0, 0);
-                travisUV[5] = new BABYLON.Vector4(0, 0, 1, 1);
-
-                var travisURL = "/images/people/travis.png";
-                // var travisURL = "https://i.imgur.com/lXehwjZ.jpg";
-                var travisMat = new BABYLON.StandardMaterial("travisMat", scene);
-                var travisTexture = new BABYLON.Texture(travisURL, scene);
-                travisMat.diffuseTexture = travisTexture;
-                var head = BABYLON.MeshBuilder.CreateBox("box",{size:1, faceColors:faceColors, faceUV:travisUV}, scene);
-                head.material = travisMat;
-                head.position.z = 5;
-
-
-                var bodyColors = new Array(6);
-                bodyColors[0] = new BABYLON.Color4(1,.75,0,1);   // orange
-                bodyColors[1] = new BABYLON.Color4(1,.75,0,1);   
-                bodyColors[2] = new BABYLON.Color4(1,.75,0,1);   
-                bodyColors[3] = new BABYLON.Color4(1,.75,0,1);   
-                bodyColors[4] = new BABYLON.Color4(1,.75,0,1);   
-                bodyColors[5] = new BABYLON.Color4(1,.75,0,1);   
+                faceColors[4] = new BABYLON.Color4(1,0,0,1);   // red top
+                faceColors[1] = new BABYLON.Color4(0,1,0,1);   // green front
+                faceColors[0] = new BABYLON.Color4(0,0,1,1);   // blue 
+                faceColors[2] = new BABYLON.Color4(1,1,0,1);   // yellow
+                faceColors[3] = new BABYLON.Color4(0,1,1,1);   // green
+                faceColors[5] = new BABYLON.Color4(1,0,1,1);   // purple
+                var head = BABYLON.MeshBuilder.CreateBox("box",{size:1, faceColors:faceColors}, scene);
+                head.position.z = 1;
               
-                var body = BABYLON.MeshBuilder.CreateBox("box",{size:2.5, width:2, height:1, depth:3, faceColors:bodyColors}, scene);
-                body.position.z = 3;
-
-                var leftLeg = BABYLON.MeshBuilder.CreateBox("box",{size:.5, width:.5, height:1, depth:3, faceColors:bodyColors}, scene);
-                leftLeg.position.z = 1;
-                leftLeg.position.x = .5;
-
-                var rightLeg = BABYLON.MeshBuilder.CreateBox("box",{size:.5, width:.5, height:1, depth:3, faceColors:bodyColors}, scene);
-                rightLeg.position.z = 1;
-                rightLeg.position.x = -.5;
-
-
-                var leftArm = BABYLON.MeshBuilder.CreateBox("box",{size:.5, width:.5, height:.5, depth:2, faceColors:bodyColors}, scene);
-                leftArm.position.z = 3;
-                leftArm.position.x = 1.5;
-                leftArm.rotate(BABYLON.Axis.Y, -Math.PI/10, BABYLON.Space.WORLD);
-
-                var rightArm = BABYLON.MeshBuilder.CreateBox("box",{size:.5, width:.5, height:.5, depth:2, faceColors:bodyColors}, scene);
-                rightArm.position.z = 3;
-                rightArm.position.x = -1.5;
+                var body = BABYLON.MeshBuilder.CreateBox("box",{size:3, width:2, height:3, depth:1.5, faceColors:faceColors}, scene);
+                body.position.z = 2;
               
 
                 
-                var groundURL = "https://cdn.glitch.com/e5be2968-33c6-40cf-951f-e3985ac077bd%2Fgrass.png?v=1560736292832";
+                var sURL = "https://cdn.glitch.com/e5be2968-33c6-40cf-951f-e3985ac077bd%2Fgrass.png?v=1560736292832";
                 var groundMat = new BABYLON.StandardMaterial("groundMat", scene);
-                groundMat.diffuseTexture = new BABYLON.Texture(groundURL, scene);
+                groundMat.diffuseTexture = new BABYLON.Texture(sURL, scene);
                 groundMat.specularColor = new BABYLON.Color3(0, 0, 0);
                 groundMat.backFaceCulling = true;
 
