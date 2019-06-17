@@ -58,7 +58,10 @@
 
         <div class="container row">
             <div class="col">
-                <h2 class="bouncy">Travis' Page</h2>
+                <h2 class="bouncy">BabylonJS Example</h2>
+                Babylon Js main page <a href="https://www.babylonjs.com">https://www.babylonjs.com</a> <br>
+                Docs <a href="https://doc.babylonjs.com/babylon101/about101">https://doc.babylonjs.com/babylon101/about101</a> <br>
+                Video Tutorial <a href="https://www.youtube.com/watch?v=X_a_PyV_wt4&list=PLS9MbmO_ssyCT1KHSi1GYX73ayv_9GusY&index=1">Youtube playlist</a>
                 <div class="mt-3">
                     <canvas id="renderCanvas" touch-action="none"></canvas>
                 </div>
