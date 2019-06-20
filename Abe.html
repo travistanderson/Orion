@@ -129,6 +129,10 @@
                 var cube = BABYLON.MeshBuilder.CreateBox("box",{size:2 ,width:3, faceColors:faceColors}, scene);
                 cube.position.z = 1;
               
+                var material = new BABYLON.StandardMaterial("material1",scene);
+                material.diffuseTexture = new BABYLON.Texture("Abe.png", scene);
+                box,material = material;
+               
                 
                 var sURL = "https://upload.wikimedia.org/wikipedia/commons/0/0b/Little_fork_bricks.jpg";
                 var groundMat = new BABYLON.StandardMaterial("groundMat", scene);
