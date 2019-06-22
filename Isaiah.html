@@ -102,6 +102,39 @@
                 bodyColors[4] = new BABYLON.Color4(1,.75,0,1);   
                 bodyColors[5] = new BABYLON.Color4(1,.75,0,1); 
               
+              
+              
+                
+                var leftLeg = BABYLON.MeshBuilder.CreateBox("box",{size:.5, width:.5, height:1, depth:3, faceColors:bodyColors}, scene);
+                leftLeg.position.z = 1;
+                leftLeg.position.x = .5;
+                var rightLeg = BABYLON.MeshBuilder.CreateBox("box",{size:.5, width:.5, height:1, depth:3, faceColors:bodyColors}, scene);
+                rightLeg.position.z = 1;
+                rightLeg.position.x = -.5;
+                var leftArm = BABYLON.MeshBuilder.CreateBox("box",{size:.5, width:.5, height:.5, depth:2, faceColors:bodyColors}, scene);
+                leftArm.position.z = 3;
+                leftArm.position.x = 1.5;
+                leftArm.rotate(BABYLON.Axis.Y, -Math.PI/10, BABYLON.Space.WORLD);
+                var rightArm = BABYLON.MeshBuilder.CreateBox("box",{size:.5, width:.5, height:.5, depth:2, faceColors:bodyColors}, scene);
+                rightArm.position.z = 3;
+                rightArm.position.x = -1.5;
+                
+              var head = BABYLON.MeshBuilder.CreateBox("box",{size:1, faceColors:faceColors, faceUV:travisUV}, scene);                
+
+                head.material = travisMat;
+                head.position.z = 5;
+              
+                 var faceColors = new Array(6);
+                faceColors[1] = new BABYLON.Color4(0,1,0,1);   // green bottom
+                faceColors[2] = new BABYLON.Color4(1,1,0,1);   // yellow left
+                faceColors[3] = new BABYLON.Color4(0,1,1,1);   // green right
+                faceColors[4] = new BABYLON.Color4(1,0,0,1);   // red back
+                faceColors[5] = new BABYLON.Color4(1,0,1,1); 
+              
+               var head = BABYLON.MeshBuilder.CreateBox("box",{size:1, faceColors:faceColors, faceUV:travisUV}, scene);
+                head.material = travisMat;
+                head.position.z = 5;
+              
                 var body = BABYLON.MeshBuilder.CreateBox("box",{size:2.5, width:2, height:1, depth:3, faceColors:bodyColors}, scene);
                 body.position.z = 3;
               
