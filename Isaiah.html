@@ -89,72 +89,54 @@
                 // camera.position.x = 5;
 
                 // Add lights to the scene
-                var light1 = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, 0, 0), scene);
+                var light1 = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, 1, 0), scene);
                 var light2 = new BABYLON.PointLight("light2", new BABYLON.Vector3(0, 1, -1), scene);
 
-                
-        <script src="javascript/main.js"></script>
-        <script type="text/javascript">
-            var canvas = document.getElementById("renderCanvas"); // Get the canvas element 
-            var engine = new BABYLON.Engine(canvas, true); // Generate the BABYLON 3D engine
-
-            var createScene = function () {
-
-                // Create the scene space
-                var scene = new BABYLON.Scene(engine);
-
-                // Add a camera to the scene and attach it to the canvas
-                var camera = new BABYLON.ArcRotateCamera("Camera", 2, 2, 10, BABYLON.Vector3.Zero(), scene);
-                camera.attachControl(canvas, true);
-                // camera.position.z = -5;
-                // camera.position.y = 50;
-                // camera.position.x = 5;
-
-                // Add lights to the scene
-                var light1 = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(1, 1, 0), scene);
-                var light2 = new BABYLON.PointLight("light2", new BABYLON.Vector3(0, 1, -1), scene);
-
-              
+                // This is where you create and manipulate meshes
+                var sphere = BABYLON.MeshBuilder.CreateSphere("sphere", {}, scene);
+                sphere.position.y = 2;
+                sphere.position.z = 2;
                 
                 var faceColors = new Array(6);
-                faceColors[4] = new BABYLON.Color4(1,.75,0.55,1);   // brown top
-                faceColors[1] = new BABYLON.Color4(0,0,1,1);   // green front
-                faceColors[0] = new BABYLON.Color4(0,0,1,1);   // blue 
-                faceColors[2] = new BABYLON.Color4(0,0,1,1);   // yellow
-                faceColors[3] = new BABYLON.Color4(0,0,1,1);   // green
-                faceColors[5] = new BABYLON.Color4(0,0,1,1);   // purple
-                var cube = BABYLON.MeshBuilder.CreateBox("box",{size:2,width:5, faceColors:faceColors}, scene);
-                cube.position.x = -2;
-                
-                var faceColors = new Array(6);
-                faceColors[4] = new BABYLON.Color4(0,0,1,1);   // brown top
-                faceColors[1] = new BABYLON.Color4(0,0,1,1);   // brown front
-                faceColors[0] = new BABYLON.Color4(0,0,1,1);   // brown
-                faceColors[2] = new BABYLON.Color4(0,0,1,1);   // brown
-                faceColors[3] = new BABYLON.Color4(0,0,1,1);   // brown
-                faceColors[5] = new BABYLON.Color4(0,0,1,1);   // red
-                var cube = BABYLON.MeshBuilder.CreateBox("box",{size:2,width:2, faceColors:faceColors}, scene);
-                cube.position.x = 2.5;
-
-                     var faceColors = new Array(6);
-                faceColors[4] = new BABYLON.Color4(1,.75,0.55,1);   // brown top
-                faceColors[1] = new BABYLON.Color4(0,0,1,1);   // green front
-                faceColors[0] = new BABYLON.Color4(0,0,1,1);   // blue 
-                faceColors[2] = new BABYLON.Color4(0,0,1,1);   // yellow
-                faceColors[3] = new BABYLON.Color4(0,0,1,1);   // green
-                faceColors[5] = new BABYLON.Color4(0,0,1,1);   // purple
-                var cube = BABYLON.MeshBuilder.CreateBox("box",{size:2,width:3, faceColors:faceColors}, scene);
-                cube.position.z = -1;
-                
-                var faceColors = new Array(6);
-                faceColors[4] = new BABYLON.Color4(0,0,1,1);   // brown top
-                faceColors[1] = new BABYLON.Color4(0,0,1,1);   // brown front
-                faceColors[0] = new BABYLON.Color4(0,0,1,1);   // brown
-                faceColors[2] = new BABYLON.Color4(0,0,1,1);   // brown
-                faceColors[3] = new BABYLON.Color4(0,0,1,1);   // brown
-                faceColors[5] = new BABYLON.Color4(0,0,1,1);   // red
-                var cube = BABYLON.MeshBuilder.CreateBox("box",{size:2,width:3, faceColors:faceColors}, scene);
+                faceColors[4] = new BABYLON.Color4(1,0,0,1);   // black top
+                faceColors[1] = new BABYLON.Color4(0,1,0,1);   // blue front
+                faceColors[0] = new BABYLON.Color4(0,0,1,1);   // red 
+                faceColors[2] = new BABYLON.Color4(1,1,0,1);   // yellow
+                faceColors[3] = new BABYLON.Color4(0,1,1,1);   // green
+                faceColors[5] = new BABYLON.Color4(1,0,1,1);   // purple
+                var cube = BABYLON.MeshBuilder.CreateBox("box",{size:6,width:6, faceColors:faceColors}, scene);
                 cube.position.z = 1;
+              
+                              var faceColors = new Array(6);
+                faceColors[4] = new BABYLON.Color4(1,0,0,1);   // black top
+                faceColors[1] = new BABYLON.Color4(0,1,0,1);   // blue front
+                faceColors[0] = new BABYLON.Color4(0,0,1,1);   // red 
+                faceColors[2] = new BABYLON.Color4(1,1,0,1);   // yellow
+                faceColors[3] = new BABYLON.Color4(0,1,1,1);   // green
+                faceColors[5] = new BABYLON.Color4(1,0,1,1);   // purple
+                var cube = BABYLON.MeshBuilder.CreateBox("box",{size:6,width:6, faceColors:faceColors}, scene);
+                cube.position.z = 1;
+              
+                              var faceColors = new Array(6);
+                faceColors[4] = new BABYLON.Color4(1,0,0,1);   // black top
+                faceColors[1] = new BABYLON.Color4(0,1,0,1);   // blue front
+                faceColors[0] = new BABYLON.Color4(0,0,1,1);   // red 
+                faceColors[2] = new BABYLON.Color4(1,1,0,1);   // yellow
+                faceColors[3] = new BABYLON.Color4(0,1,1,1);   // green
+                faceColors[5] = new BABYLON.Color4(1,0,1,1);   // purple
+                var cube = BABYLON.MeshBuilder.CreateBox("box",{size:6,width:6, faceColors:faceColors}, scene);
+                cube.position.z = 1;
+              
+                              var faceColors = new Array(6);
+                faceColors[4] = new BABYLON.Color4(1,0,0,1);   // black top
+                faceColors[1] = new BABYLON.Color4(0,1,0,1);   // blue front
+                faceColors[0] = new BABYLON.Color4(0,0,1,1);   // red 
+                faceColors[2] = new BABYLON.Color4(1,1,0,1);   // yellow
+                faceColors[3] = new BABYLON.Color4(0,1,1,1);   // green
+                faceColors[5] = new BABYLON.Color4(1,0,1,1);   // purple
+                var cube = BABYLON.MeshBuilder.CreateBox("box",{size:6,width:6, faceColors:faceColors}, scene);
+                cube.position.z = 1;
+
                 
                 var sURL = "https://upload.wikimedia.org/wikipedia/commons/0/0b/Little_fork_bricks.jpg";
                 var groundMat = new BABYLON.StandardMaterial("groundMat", scene);
@@ -164,7 +146,8 @@
 
 
 
-              
+                var plane = BABYLON.MeshBuilder.CreatePlane("myPlane", {width: 6, height: 4, sideOrientation: BABYLON.Mesh.DOUBLESIDE}, scene);
+                plane.material = groundMat;
 
 
                 return scene;
