@@ -94,8 +94,16 @@
 
                 // This is where you create and manipulate meshes
                
+                var bodyColors = new Array(6);
+                bodyColors[0] = new BABYLON.Color4(1,.75,0,1);   // orange
+                bodyColors[1] = new BABYLON.Color4(1,.75,0,1);   
+                bodyColors[2] = new BABYLON.Color4(0,0,1,1);   
+                bodyColors[3] = new BABYLON.Color4(1,.75,0,1);   
+                bodyColors[4] = new BABYLON.Color4(1,.75,0,1);   
+                bodyColors[5] = new BABYLON.Color4(1,.75,0,1); 
               
-              
+                var body = BABYLON.MeshBuilder.CreateBox("box",{size:2.5, width:2, height:1, depth:3, faceColors:bodyColors}, scene);
+                body.position.z = 3;
               
 
                 
