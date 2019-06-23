@@ -118,8 +118,16 @@
                 var rightArm = BABYLON.MeshBuilder.CreateBox("box",{size:.5, width:.5, height:.5, depth:2, faceColors:bodyColors}, scene);
                 rightArm.position.z = 3;
                 rightArm.position.x = -1.5;
+              
+                              var travisUV = new Array(6);
+                travisUV[0] = new BABYLON.Vector4(0, 0, 0, 0);
+                travisUV[1] = new BABYLON.Vector4(0, 0, 0, 0);
+                travisUV[2] = new BABYLON.Vector4(0, 0, 0, 0);
+                travisUV[3] = new BABYLON.Vector4(0, 0, 0, 0);
+                travisUV[4] = new BABYLON.Vector4(0, 0, 0, 0);
+                travisUV[5] = new BABYLON.Vector4(0, 0, 1, 1);
                 
-              var head = BABYLON.MeshBuilder.CreateBox("box",{size:1, faceColors:faceColors, faceUV:IsaiahUV}, scene);                
+              var head = BABYLON.MeshBuilder.CreateBox("box",{size:1, faceColors:faceColors, faceUV:travisUV}, scene);                
 
                 head.material = travisMat;
                 head.position.z = 5;
