@@ -127,9 +127,15 @@
                 travisUV[4] = new BABYLON.Vector4(0, 0, 0, 0);
                 travisUV[5] = new BABYLON.Vector4(0, 0, 1, 1);
                 
-              var head = BABYLON.MeshBuilder.CreateBox("box",{size:1, faceColors:faceColors, faceUV:travisUV}, scene);                
+              var head = BABYLON.MeshBuilder.CreateBox("box",{size:1, faceColors:faceColors, faceUV:travisUV}, scene); 
+              
+                  var isaiahURL = "/images/people/isaiah.png";
+                // var travisURL = "https://i.imgur.com/lXehwjZ.jpg";
+                var isaiahMat = new BABYLON.StandardMaterial("travisMat", scene);
+                var isaiahTexture = new BABYLON.Texture(isaiahURL, scene);
+                isaiahMat.diffuseTexture = isaiahTexture;
 
-                head.material = travisMat;
+                head.material = isaiahMat;
                 head.position.z = 5;
               
                  var faceColors = new Array(6);
@@ -140,7 +146,7 @@
                 faceColors[5] = new BABYLON.Color4(1,0,1,1); 
               
                var head = BABYLON.MeshBuilder.CreateBox("box",{size:1, faceColors:faceColors, faceUV:travisUV}, scene);
-                head.material = travisMat;
+                head.material = isaiahMat;
                 head.position.z = 5;
               
                 var body = BABYLON.MeshBuilder.CreateBox("box",{size:2.5, width:2, height:1, depth:3, faceColors:bodyColors}, scene);
