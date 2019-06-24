@@ -120,11 +120,11 @@
                 rightArm.position.x = -1.5;
               
                 var faceColors = new Array(6);
-                faceColors[1] = new BABYLON.Color4(0,1,0,1);   // green bottom
-                faceColors[2] = new BABYLON.Color4(1,1,0,1);   // yellow left
-                faceColors[3] = new BABYLON.Color4(0,1,1,1);   // green right
-                faceColors[4] = new BABYLON.Color4(1,0,0,1);   // red back
-                faceColors[5] = new BABYLON.Color4(1,0,1,1); 
+                faceColors[1] = new BABYLON.Color4(1,1,1,1);   // green bottom
+                faceColors[2] = new BABYLON.Color4(1,1,1,1);   // yellow left
+                faceColors[3] = new BABYLON.Color4(1,1,1,1);   // green right
+                faceColors[4] = new BABYLON.Color4(1,1,1,1);   // red back
+                faceColors[5] = new BABYLON.Color4(1,1,1,1); 
               
                               var isaiahUV = new Array(6);
                 isaiahUV[0] = new BABYLON.Vector4(0, 0, 0, 0);
@@ -141,6 +141,7 @@
                 var isaiahMat = new BABYLON.StandardMaterial("isaiahMat", scene);
                 var isaiahTexture = new BABYLON.Texture(isaiahURL, scene);
                 isaiahMat.diffuseTexture = isaiahTexture;
+                isaiahMat.diffuseTexture.wAng = 1.6;
 
                 head.material = isaiahMat;
                 head.position.z = 5;
